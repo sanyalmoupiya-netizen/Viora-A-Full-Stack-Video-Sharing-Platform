@@ -17,10 +17,14 @@ app.use(express.static("public"))
 import healthcheckRouter from "./routes/healthcheck.routes.js"
 import userRoutes from "./routes/user.routes.js"
 import { errorHandler } from "./middlewares/error.middlewares.js"
+import videoRouter from "./routes/video.routes.js";
+
+
 
 //routes
 app.use("/api/v1/healthcheck",healthcheckRouter)
 app.use("/api/v1/users",userRoutes)
+app.use("/api/v1/videos", videoRouter)
 app.use(errorHandler)
 
 export { app }
