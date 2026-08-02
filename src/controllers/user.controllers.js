@@ -59,7 +59,8 @@ try{
 catch(error){
     console.log("Error uploading coverImage",error)
     throw new ApiError(500,"Failed to upload coverImageS")
-}
+} console.log(req.body)
+console.log(req.userName)
     const user = await User.create({
         fullName,
         avatar:avatar.url,
